@@ -1,0 +1,20 @@
+ls rpmbuild/
+BUILD  BUILDROOT  RPMS  SOURCES  SPECS  SRPMS
+
+ls rpmbuild/*
+rpmbuild/BUILD:
+abyum  AByum-3.6  AByum-3.6-02_2021
+
+rpmbuild/BUILDROOT:
+
+rpmbuild/RPMS:
+noarch
+
+rpmbuild/SOURCES:
+AByum-3.6  AByum.tar.gz
+
+rpmbuild/SPECS:
+abyum.spec
+
+rpmbuild/SRPMS:
+AByum-3.6-02_2021.src.rpm  AByum-3.6-03_2021.src.rpm
