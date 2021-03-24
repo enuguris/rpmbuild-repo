@@ -1,0 +1,46 @@
+#Preparing the system to build rpm package
+
+#Install rpmdevtools package
+yum -y install rpmdevtools rpm-build
+
+#as a normal user run rpmdev-setuptree to setup the tree strucre
+$rpmdev-setuptree
+
+#spec file
+
+Name:           AByum
+Version:        3.6
+Release:        02_2021
+Summary:        Alliance Bernstein YUM configuration update
+
+Group:          Alliance Bernstein
+BuildArch:      noarch
+License:        Non-GPL
+Source0:        AByum.tar.gz
+
+
+%description
+<< change this >>
+
+%prep
+%setup -q
+
+%build
+
+%install
+install -m 0755 -d $RPM_BUILD_ROOT/etc/yum.repos.d
+install -m 0755 ABlinux.repo $RPM_BUILD_ROOT/etc/yum.repos.d/ABlinux.repo
+
+
+%files
+/etc/yum.repos.d/
+%config /etc/yum.repos.d/ABlinux.repo
+
+%changelog
+* Wed Mar 24 2021 Nix Engineering 
+  - updating with the new patch bundle
+  
+
+##################
+$ ls -lth SOURCES/AByum-3.6/ABlinux.repo
+-rw-rw-r-- 1 vmimport vmimport 593 Mar 24 17:22 SOURCES/AByum-3.6/ABlinux.repo
